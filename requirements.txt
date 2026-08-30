@@ -1,9 +1,9 @@
 # MediAssist AI - Streamlit Cloud Deployment
 # Only direct application imports listed.
 # Transitive deps (torch, langchain-core, etc.) are resolved by pip/uv automatically.
-# streamlit is pre-installed on Streamlit Cloud — do NOT list it here.
 
-# --- Environment ---
+# --- Core ---
+streamlit>=1.28.0
 python-dotenv>=1.0.0
 
 # --- LangChain (used directly in code) ---
