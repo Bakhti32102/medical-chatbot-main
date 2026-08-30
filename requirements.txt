@@ -16,7 +16,7 @@ langchain-groq>=0.1.0,<2.0.0
 sentence-transformers>=2.0.0
 
 # --- Vector Store ---
-faiss-cpu>=1.7.0
+faiss-cpu==1.15.0
 
 # --- PDF Loading (vectorstore rebuild script) ---
 pypdf>=3.0.0
