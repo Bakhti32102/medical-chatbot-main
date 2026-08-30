@@ -1,27 +1,22 @@
-# MediAssist AI - Streamlit Cloud compatible requirements
-# Only direct dependencies with minimum version constraints
-# Let pip resolve transitive dependencies to avoid conflicts
+# MediAssist AI - Streamlit Cloud Deployment
+# Only direct application imports listed.
+# Transitive deps (torch, langchain-core, etc.) are resolved by pip/uv automatically.
+# streamlit is pre-installed on Streamlit Cloud — do NOT list it here.
 
-# --- Core ---
-streamlit>=1.28.0
+# --- Environment ---
 python-dotenv>=1.0.0
 
-# --- LangChain ecosystem ---
-langchain>=0.2.0
-langchain-core>=0.2.0
-langchain-community>=0.2.0
-langchain-huggingface>=0.1.0
-langchain-groq>=0.1.0
-langchain-text-splitters>=0.2.0
+# --- LangChain (used directly in code) ---
+langchain-classic>=1.0.0,<2.0.0
+langchain-community>=0.2.0,<1.0.0
+langchain-huggingface>=0.1.0,<2.0.0
+langchain-groq>=0.1.0,<2.0.0
 
-# --- LLM / Retrieval chain (classic API) ---
-langchain-classic>=1.0.0
-
-# --- FAISS ---
-faiss-cpu>=1.7.0
-
-# --- Embeddings ---
+# --- Embeddings (required at runtime by HuggingFaceEmbeddings) ---
 sentence-transformers>=2.0.0
 
-# --- PDF loading (for vectorstore rebuild) ---
+# --- Vector Store ---
+faiss-cpu>=1.7.0
+
+# --- PDF Loading (vectorstore rebuild script) ---
 pypdf>=3.0.0
